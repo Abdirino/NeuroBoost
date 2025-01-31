@@ -38,7 +38,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="bg-white text-black bg-[linear-gradient(to_bottom,#f5f7fa,#ffffff)] py-[36px] sm:py-14 sm:pl-10 px-4 relative overflow-clip">
+    <div className="bg-white text-black bg-[linear-gradient(to_bottom,#f5f7fa,#ffffff)] py-28 sm:pl-10 px-4 relative overflow-clip">
       <div className="flex items-start gap-2">
         <div>
           <div className="container relative">
@@ -70,7 +70,7 @@ export const Hero = () => {
                 <h1 className="section-title text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter text-balance text-[#2E3A4D]">
                   2X Your Productivity
                   <br />
-                  with AI-Powered 
+                  with AI-Powered
                   <br />
                   Hacks in Just 5 Days
                 </h1>
@@ -84,8 +84,10 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Automate repetitive tasks, boost focus, and save 10+ hours/week
-              with free AI tools and strategies. No credit card required.
+              Transform your life with NeuroBoost! Automate tedious tasks,
+              sharpen focus, and reclaim 10+ hours weekly using free AI tools.
+              Effortless, life-changing results—no credit card needed. Start
+              your productivity revolution today!
             </motion.p>
 
             {/* CTA Buttons */}
@@ -181,7 +183,11 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            <Image src={HeroIMG} alt="" className="-top-30 h-[500px] w-[500px] hidden sm:block"/>
+            <Image
+              src={HeroIMG}
+              alt=""
+              className="-top-30 h-[500px] w-[500px] hidden sm:block"
+            />
           </motion.div>
 
           {/* Solution Overview */}
