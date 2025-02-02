@@ -67,7 +67,7 @@ export const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="inline-flex relative">
-                <h1 className="section-title text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter text-balance text-[#2E3A4D]">
+                <h1 className="section-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter text-balance text-[#2E3A4D]">
                   2X Your Productivity
                   <br />
                   with AI-Powered
