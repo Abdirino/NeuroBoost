@@ -1,5 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import { useRef } from "react";
 
 export const CallToAction = () => {
@@ -34,7 +35,9 @@ export const CallToAction = () => {
             viewport={{ once: true }}
             className="mt-4 text-lg text-white/80 max-w-2xl mx-auto"
           >
-            Join 500K+ professionals who’ve transformed their lives with NeuroBoost. Automate your tasks, boost focus, and save 10+ hours/week—starting today!
+            Join 500K+ professionals who’ve transformed their lives with
+            NeuroBoost. Automate your tasks, boost focus, and save 10+
+            hours/week—starting today!
           </motion.p>
         </div>
 
@@ -46,12 +49,16 @@ export const CallToAction = () => {
           viewport={{ once: true }}
           className="flex justify-center gap-4 mt-10"
         >
-          <button className="bg-white text-[#FF3B30] px-8 py-3 rounded-lg font-bold hover:bg-[#F5F7FA] hover:text-[#E5342A] transition-colors duration-200">
-            Join the Free Challenge
-          </button>
-          <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-[#FF3B30] transition-colors duration-200">
-            Get the Toolkit
-          </button>
+          <Link href="/signup">
+            <button className="bg-white text-[#FF3B30] px-8 py-3 rounded-lg font-bold hover:bg-[#F5F7FA] hover:text-[#E5342A] transition-colors duration-200">
+              Join the Free Challenge
+            </button>
+          </Link>
+          <Link href="/checkout" className="text-[#4A90E2] hover:underline">
+            <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-[#FF3B30] transition-colors duration-200">
+              Get the Toolkit
+            </button>
+          </Link>
         </motion.div>
 
         {/* Urgency Message */}

@@ -2,13 +2,14 @@
 import CheckIcon from "@/assets/images/icons8-check-30.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const toolkit = {
   title: "AI Productivity Toolkit",
   price: 49, // One-time payment
   description:
     "Unlock lifetime access to the ultimate AI productivity toolkit. Automate your life, boost focus, and save 10+ hours/week—forever.",
-  buttonText: "Get the Toolkit",
+  buttonText: "Get the Toolkit Now",
   features: [
     "50+ ChatGPT Prompts for Work & Study",
     "Custom JavaScript Automation Scripts",
@@ -65,13 +66,15 @@ export const Pricing = () => {
               <span className="text-[#6B7280]"> (One-Time Payment)</span>
             </div>
             <p className="mt-4 text-[#6B7280]">{toolkit.description}</p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full mt-6 py-3 rounded-lg font-bold text-white bg-[#FF3B30] hover:bg-[#E5342A] transition-colors duration-200"
-            >
-              {toolkit.buttonText}
-            </motion.button>
+            <Link href="/checkout">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full mt-6 py-3 rounded-lg font-bold text-white bg-[#FF3B30] hover:bg-[#E5342A] transition-colors duration-200"
+              >
+                {toolkit.buttonText}
+              </motion.button>
+            </Link>
           </div>
 
           {/* Features List */}

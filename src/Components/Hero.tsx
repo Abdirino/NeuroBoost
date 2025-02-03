@@ -3,6 +3,7 @@ import Image from "next/image";
 import HeroIMG from "@/Assets/images/Time management-amico.png";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export const Hero = () => {
   // Countdown Timer Logic
@@ -42,22 +43,24 @@ export const Hero = () => {
       <div className="flex items-start gap-2">
         <div>
           <div className="container relative">
-            {/* Tagline */}
-            <motion.div
-              className="flex"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <a
-                href="#"
-                className="border px-4 py-2 rounded-lg border-[#4A90E2]/30 bg-[#4A90E2]/10 hover:bg-[#4A90E2]/20 transition-colors duration-200"
+            <Link href="/signup">
+              {/* Tagline */}
+              <motion.div
+                className="flex"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <span className="font-bold sm:text-xl text-sm text-[#FF3B30] text-balance">
-                  Join the Free 5-Day Challenge
-                </span>
-              </a>
-            </motion.div>
+                <a
+                  href="#"
+                  className="border px-4 py-2 rounded-lg border-[#4A90E2]/30 bg-[#4A90E2]/10 hover:bg-[#4A90E2]/20 transition-colors duration-200"
+                >
+                  <span className="font-bold sm:text-xl text-sm text-[#FF3B30] text-balance">
+                    Join 500K+ professionals saving 10+ hours/week.
+                  </span>
+                </a>
+              </motion.div>
+            </Link>
 
             {/* Main Headline */}
             <motion.div
@@ -91,23 +94,25 @@ export const Hero = () => {
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div
-              className="flex mt-6 sm:mt-9 gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <button
-                onClick={() => {
-                  document
-                    .getElementById("signup")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="bg-[#FF3B30] text-white py-3 px-6 rounded-lg font-bold hover:bg-[#FF3B30]/80 transition-colors duration-200"
+            <Link href="/signup">
+              <motion.div
+                className="flex mt-6 sm:mt-9 gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
               >
-                Join the Free Challenge
-              </button>
-            </motion.div>
+                <button
+                  onClick={() => {
+                    document
+                      .getElementById("signup")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="bg-[#FF3B30] text-white py-3 px-6 rounded-lg font-bold hover:bg-[#FF3B30]/80 transition-colors duration-200"
+                >
+                  Join the Free Challenge
+                </button>
+              </motion.div>
+            </Link>
 
             {/* Countdown Timer */}
             <motion.div

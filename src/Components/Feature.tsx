@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const features = [
   {
@@ -42,7 +43,10 @@ const features = [
 
 export const Features = () => {
   return (
-    <div id="features" className="bg-[#F5F7FA] py-[72px] sm:py-24 px-4 sm:px-10">
+    <div
+      id="features"
+      className="bg-[#F5F7FA] py-[72px] sm:py-24 px-4 sm:px-10"
+    >
       <div className="container">
         {/* Heading Section */}
         <div className="max-w-3xl mx-auto text-center">
@@ -62,7 +66,8 @@ export const Features = () => {
             viewport={{ once: true }}
             className="mt-5 text-lg text-[#6B7280]"
           >
-            In just 5 days, you’ll unlock the power of AI to automate your life, boost productivity, and achieve more with less effort. Here’s how:
+            In just 5 days, you’ll unlock the power of AI to automate your life,
+            boost productivity, and achieve more with less effort. Here’s how:
           </motion.p>
         </div>
 
@@ -80,15 +85,19 @@ export const Features = () => {
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#FF3B30] text-white text-2xl transition-transform duration-300 group-hover:scale-110">
                 {icon}
               </div>
-              <h3 className="mt-6 font-bold text-2xl text-[#2E3A4D]">{title}</h3>
+              <h3 className="mt-6 font-bold text-2xl text-[#2E3A4D]">
+                {title}
+              </h3>
               <p className="mt-2 text-[#6B7280]">{description}</p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-6 px-4 py-2 rounded-lg font-bold text-white bg-[#FF3B30] hover:bg-[#E5342A] transition-colors duration-200"
-              >
-                Learn More
-              </motion.button>
+              <Link href="#daily-breakdown">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-6 px-4 py-2 rounded-lg font-bold text-white bg-[#FF3B30] hover:bg-[#E5342A] transition-colors duration-200"
+                >
+                  Learn More
+                </motion.button>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -105,15 +114,19 @@ export const Features = () => {
             Don’t Miss Out!
           </h2>
           <p className="mt-4 text-lg text-white max-w-2xl mx-auto">
-            Join 500K+ professionals who’ve transformed their lives with NeuroBoost. The free challenge ends soon—sign up now before it’s too late!
+            Join 500K+ professionals who’ve transformed their lives with
+            NeuroBoost. The free challenge ends soon—sign up now before it’s too
+            late!
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-6 px-6 py-3 rounded-lg font-bold text-[#FF3B30] bg-white hover:bg-[#F5F7FA] transition-colors duration-200"
-          >
-            Join the Free Challenge
-          </motion.button>
+          <Link href="/signup">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-6 px-6 py-3 rounded-lg font-bold text-[#FF3B30] bg-white hover:bg-[#F5F7FA] transition-colors duration-200"
+            >
+              Join the Free Challenge
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </div>
