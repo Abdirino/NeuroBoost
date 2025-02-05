@@ -15,7 +15,7 @@ export const Hero = () => {
   });
 
   useEffect(() => {
-    const countdownDate = new Date("2025-02-04T23:59:59").getTime(); // Set your end date here
+    const countdownDate = new Date("2025-02-07T23:59:59").getTime(); // Set your end date here
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
