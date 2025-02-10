@@ -2,10 +2,13 @@
 import { useState } from "react";
 import { supabase } from "@/app/lib/supabaseClient";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Logo from "@/Assets/images/neuroboost-website-logo.png"; // Replace with your logo
 
-export default function Login () {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
 
@@ -21,50 +24,81 @@ export default function Login () {
     if (loginError) {
       setError(loginError.message);
     } else {
-      router.push("/dashboard"); // Redirect to dashboard after login
+      router.push("/dashboard");
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F5F7FA]">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h1 className="text-2xl font-bold text-[#2E3A4D] mb-6">Log In</h1>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
-        <form onSubmit={handleLogin}>
-          <div className="mb-4">
+    <div className="min-h-screen bg-[#F5F7FA] flex items-center justify-center p-4 py-20">
+      <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
+        {/* Logo */}
+        <div className="mb-8 flex justify-center">
+          <Image
+            src={Logo}
+            alt="NeuroBoost Logo"
+            width={120}
+            className="hover:opacity-80"
+          />
+        </div>
+
+        <h1 className="text-3xl font-bold text-[#2E3A4D] mb-6 text-center">
+          Welcome Back to NeuroBoost
+        </h1>
+
+        {error && (
+          <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg">{error}</div>
+        )}
+
+        <form onSubmit={handleLogin} className="space-y-4">
+          <div>
             <label className="block text-[#6B7280] mb-2">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border border-[#E5E7EB] rounded-lg"
+              className="w-full p-3 border border-[#E5E7EB] rounded-lg focus:ring-2 focus:ring-[#FF3B30]"
               required
             />
           </div>
-          <div className="mb-6">
+
+          <div>
             <label className="block text-[#6B7280] mb-2">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border border-[#E5E7EB] rounded-lg"
-              required
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full p-3 border border-[#E5E7EB] rounded-lg focus:ring-2 focus:ring-[#FF3B30]"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-3 text-[#6B7280]"
+              >
+                {showPassword ? "👁️" : "👁️🗨️"}
+              </button>
+            </div>
           </div>
+
           <button
             type="submit"
-            className="w-full bg-[#FF3B30] hover:bg-[#E5342A] text-white py-2 rounded-lg transition-colors"
+            className="w-full bg-[#FF3B30] text-white py-3 rounded-lg font-bold hover:bg-[#E5342A] transition-colors"
           >
             Log In
           </button>
         </form>
-        <p className="mt-4 text-[#6B7280]">
+
+        <p className="mt-6 text-[#6B7280] text-center">
           Don’t have an account?{" "}
-          <a href="/signup" className="text-[#FF3B30] hover:underline">
-            Sign Up
+          <a
+            href="/signup"
+            className="text-[#4A90E2] hover:underline font-semibold"
+          >
+            Start Free Challenge
           </a>
         </p>
       </div>
     </div>
   );
-};
+}
